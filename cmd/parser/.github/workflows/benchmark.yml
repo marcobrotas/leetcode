@@ -1,0 +1,34 @@
+name: Benchmark
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CI_COMMIT_MESSAGE: 'Docs: Updated benchmarks'
+      CI_COMMIT_AUTHOR: GitHub Actions
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.21
+      - name: Install dependencies
+        run: |
+          go get -v -t -d ./...
+      - name: Build benchmark parser
+        run: |
+          make build-parser
+      - name: Run benchmarks and parser
+        run: |
+          make run
+      - name: Commit and push changes
+        if: github.event_name == 'push'
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git add README.md
+          git commit -a -m "$CI_COMMIT_MESSAGE"
+          git push

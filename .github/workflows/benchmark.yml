@@ -17,7 +17,8 @@ jobs:
           go-version: 1.21
       - name: Install dependencies
         run: |
-          go get -v -t -d ./...
+          go get -v -t -d ./... & \
+          go install go.bobheadxi.dev/gobenchdata@latest
       - name: Build benchmark parser
         run: |
           make build-parser

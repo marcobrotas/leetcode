@@ -28,7 +28,7 @@ func TestAddTwoNumbers(t *testing.T) {
 	}
 }
 
-func BenchmarkTwoSum(b *testing.B) {
+func BenchmarkAddTwoNumbers(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		addTwoNumbers(benchmark.l1, benchmark.l2)
 	}

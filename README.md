@@ -22,6 +22,7 @@ Solutions and Benchmarks
 
 
 
+
 ## Challenges
 
 [ADD TWO NUMBERS](#add_two_numbers)  
@@ -33,18 +34,18 @@ Solutions and Benchmarks
 
 ## [ADD TWO NUMBERS](./add-two-numbers)
 
-Runs: 10472740  
+Runs: 7218174  
 
 | Name | ns/op | B/op | allocs/op |  
 | ---- | ----- | ---- | --------- |  
-| BenchmarkTwoSum-2 | 116.100000 ns/op | 48.000000 B/op | 3.000000 allocs/op |  
+| BenchmarkAddTwoNumbers-2 | 139.300000 ns/op | 48.000000 B/op | 3.000000 allocs/op |  
 
 <a name="two_sum"></a>  
 
 ## [TWO SUM](./two-sum)
 
-Runs: 9062814  
+Runs: 7911445  
 
 | Name | ns/op | B/op | allocs/op |  
 | ---- | ----- | ---- | --------- |  
-| BenchmarkTwoSum-2 | 129.900000 ns/op | 16.000000 B/op | 1.000000 allocs/op |  
+| BenchmarkTwoSum-2 | 149.700000 ns/op | 16.000000 B/op | 1.000000 allocs/op |  

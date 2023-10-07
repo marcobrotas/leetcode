@@ -59,7 +59,7 @@ func main() {
 
 	for _, result := range results {
 		for _, suite := range result.Suites {
-			markdown += fmt.Sprintf("[%s](#%s)  \n", getChallengeNameFromPackage(suite.Pkg), getChallengeNameFromPackage(suite.Pkg))
+			markdown += fmt.Sprintf("[%s](#%s)  \n", getChallengeNameFromPackage(suite.Pkg), slug(getSubPackageName(suite.Pkg)))
 		}
 	}
 
@@ -68,6 +68,8 @@ func main() {
 	for _, result := range results {
 		markdown += "\n"
 		for _, suite := range result.Suites {
+			markdown += "\n"
+			markdown += fmt.Sprintf("<a name=\"%s\"></a>  \n", slug(getSubPackageName(suite.Pkg)))
 			markdown += fmt.Sprintf("\n## [%s](./%s)\n", getChallengeNameFromPackage(suite.Pkg), getSubPackageName(suite.Pkg))
 			markdown += "\n"
 
@@ -85,6 +87,10 @@ func main() {
 	}
 
 	os.WriteFile("README.md", []byte(markdown), 0644)
+}
+
+func slug(str string) string {
+	return strings.ReplaceAll(strings.ToLower(str), "-", "_")
 }
 
 func getSubPackageName(pk string) string {

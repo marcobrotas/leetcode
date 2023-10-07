@@ -3,6 +3,8 @@ name: Benchmark
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   build:
@@ -12,6 +14,8 @@ jobs:
       CI_COMMIT_AUTHOR: GitHub Actions
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
       - uses: actions/setup-go@v2
         with:
           go-version: 1.21

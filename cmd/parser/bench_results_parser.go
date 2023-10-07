@@ -59,7 +59,7 @@ func main() {
 
 	for _, result := range results {
 		for _, suite := range result.Suites {
-			markdown += fmt.Sprintf("* [%s](#%s) \n", getChallengeNameFromPackage(suite.Pkg), strings.ToLower(getChallengeNameFromPackage(suite.Pkg)))
+			markdown += fmt.Sprintf("[%s](#%s)  \n", getChallengeNameFromPackage(suite.Pkg), getChallengeNameFromPackage(suite.Pkg))
 		}
 	}
 

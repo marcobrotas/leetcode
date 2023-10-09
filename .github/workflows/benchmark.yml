@@ -13,10 +13,10 @@ jobs:
       CI_COMMIT_MESSAGE: 'Docs: Updated benchmarks'
       CI_COMMIT_AUTHOR: GitHub Actions
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
-      - uses: actions/setup-go@v2
+      - uses: actions/setup-go@v4
         with:
           go-version: 1.21
       - name: Install dependencies

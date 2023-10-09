@@ -10,7 +10,7 @@ type TestCase struct {
 	expected int
 }
 
-var tests []TestCase = []TestCase{
+var tests = []TestCase{
 	{s: "abcabcbb", expected: 3},
 	{s: "bbbbb", expected: 1},
 	{s: "pwwkew", expected: 3},

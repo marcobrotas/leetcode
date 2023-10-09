@@ -11,12 +11,95 @@ type TestCase struct {
 	Expected *ListNode
 }
 
-var tests []TestCase = []TestCase{
-	{l1: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: nil}}}, l2: &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4, Next: nil}}}, Expected: &ListNode{Val: 7, Next: &ListNode{Val: 0, Next: &ListNode{Val: 8, Next: nil}}}},
-	{l1: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: nil}}}}}}}, l2: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: nil}}}}, Expected: &ListNode{Val: 8, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0, Next: &ListNode{Val: 1, Next: nil}}}}}}}}},
+var tests = []TestCase{
+	{
+		l1: &ListNode{
+			Val: 2, Next: &ListNode{
+				Val: 4, Next: &ListNode{
+					Val: 3, Next: nil,
+				},
+			},
+		},
+		l2: &ListNode{
+			Val: 5, Next: &ListNode{
+				Val: 6, Next: &ListNode{
+					Val: 4, Next: nil,
+				},
+			},
+		},
+		Expected: &ListNode{
+			Val: 7, Next: &ListNode{
+				Val: 0, Next: &ListNode{
+					Val: 8, Next: nil,
+				},
+			},
+		},
+	},
+	{
+		l1: &ListNode{
+			Val: 9, Next: &ListNode{
+				Val: 9, Next: &ListNode{
+					Val: 9, Next: &ListNode{
+						Val: 9, Next: &ListNode{
+							Val: 9, Next: &ListNode{
+								Val: 9, Next: &ListNode{
+									Val: 9, Next: nil,
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+		l2: &ListNode{
+			Val: 9, Next: &ListNode{
+				Val: 9, Next: &ListNode{
+					Val: 9, Next: &ListNode{
+						Val: 9, Next: nil,
+					},
+				},
+			},
+		},
+		Expected: &ListNode{
+			Val: 8, Next: &ListNode{
+				Val: 9, Next: &ListNode{
+					Val: 9, Next: &ListNode{
+						Val: 9, Next: &ListNode{
+							Val: 0, Next: &ListNode{
+								Val: 0, Next: &ListNode{
+									Val: 0, Next: &ListNode{
+										Val: 1, Next: nil,
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	},
 }
 
-var benchmark = TestCase{l1: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: nil}}}, l2: &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4, Next: nil}}}, Expected: &ListNode{Val: 7, Next: &ListNode{Val: 0, Next: &ListNode{Val: 8, Next: nil}}}}
+var benchmark = TestCase{
+	l1: &ListNode{
+		Val: 2, Next: &ListNode{
+			Val: 4, Next: &ListNode{
+				Val: 3, Next: nil},
+		},
+	},
+	l2: &ListNode{
+		Val: 5, Next: &ListNode{
+			Val: 6, Next: &ListNode{
+				Val: 4, Next: nil},
+		},
+	},
+	Expected: &ListNode{
+		Val: 7, Next: &ListNode{
+			Val: 0, Next: &ListNode{
+				Val: 8, Next: nil},
+		},
+	},
+}
 
 func TestAddTwoNumbers(t *testing.T) {
 	for _, test := range tests {

@@ -12,7 +12,7 @@ type TestCase struct {
 	Expected []int
 }
 
-var tests []TestCase = []TestCase{
+var tests = []TestCase{
 	{Nums: []int{2, 7, 11, 15}, Target: 9, Expected: []int{1, 0}},
 	{Nums: []int{3, 2, 4}, Target: 6, Expected: []int{1, 2}},
 	{Nums: []int{3, 3}, Target: 6, Expected: []int{0, 1}},

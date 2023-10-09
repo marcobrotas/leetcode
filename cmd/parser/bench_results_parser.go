@@ -86,7 +86,9 @@ func main() {
 		}
 	}
 
-	os.WriteFile("README.md", []byte(markdown), 0644)
+	if err = os.WriteFile("README.md", []byte(markdown), 0644); err != nil {
+		panic(err)
+	}
 }
 
 func slug(str string) string {

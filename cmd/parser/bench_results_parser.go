@@ -90,7 +90,7 @@ func main() {
 }
 
 func slug(str string) string {
-	return strings.ReplaceAll(strings.ToLower(str), "-", "_")
+	return strings.ToLower(str)
 }
 
 func getSubPackageName(pk string) string {
@@ -98,5 +98,5 @@ func getSubPackageName(pk string) string {
 }
 
 func getChallengeNameFromPackage(pkg string) string {
-	return strings.ToTitle(strings.Replace(getSubPackageName(pkg), "-", " ", -1))
+	return strings.ToTitle(strings.Replace(getSubPackageName(pkg), "_", " ", -1))
 }
